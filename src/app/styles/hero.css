@@ -1,0 +1,155 @@
+/* Hero Section Styles */
+.hero-container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh; /* Full viewport height */
+  display: flex;
+  justify-content: center; /* Centers content horizontally */
+  align-items: center; /* Vertically center content */
+  background-color: #fff; /* Light background color */
+  margin-top: 80px; /* Adjust space below navbar */
+  padding: 0 20px; /* Add some padding to the sides */
+}
+
+/* Main content inside hero section */
+.hero-content {
+  display: flex; /* Use flexbox to align items */
+  justify-content: center; /* Center items horizontally */
+  align-items: center; /* Vertically center content */
+  text-align: left; /* Align text to the left on larger screens */
+  width: 100%;
+  max-width: 1200px; /* Optional: Set a max-width for large screens */
+  gap: 30px; /* Add space between image and text */
+}
+
+/* The section where the text is positioned */
+.hero-text {
+  font-family: 'Arial', sans-serif;
+  color: #dd02cb; /* Purple color for the text */
+  max-width: 600px; /* Limit width for better text alignment */
+}
+
+/* Adjusted spacing for the hero's text */
+.hero-main {
+  display: inline-block;
+}
+
+/* "I'm" text (Montserrat Font) */
+.hero-im {
+  font-family: 'Montserrat', sans-serif; /* Apply Montserrat font */
+  font-size: 60px;
+  font-weight: 500;
+  margin-left: 2px;
+  letter-spacing: 0px;
+  opacity: 0.8;
+}
+
+/* Name Styling (Montserrat Font) */
+.hero-name {
+  font-family: 'Montserrat', sans-serif; /* Apply Montserrat font */
+  font-size: 50px;
+  font-weight: 600; /* Bold */
+  margin: 0;
+  line-height: 1.1;
+  opacity: 0.9;
+}
+
+/* Job Titles Styling (Sans-serif Font) */
+.hero-job {
+  font-family: 'Sans-serif', sans-serif; /* Apply Sans-serif font */
+  font-size: 30px; /* Increase font size */
+  font-weight: normal;
+  margin-top: 15px;
+  opacity: 0.7;
+  letter-spacing: 1px;
+  color: black;
+}
+
+/* Adjust spacing between job titles */
+.hero-main.b .hero-job {
+  margin-top: 5px;
+}
+
+/* Hero image styling */
+.hero-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px; /* Adjust width */
+}
+
+.hero-img {
+  width: 25vw; /* Make image width relative to the viewport (larger on larger screens) */
+  height: 25vw; /* Make image height the same */
+  max-width: 250px; /* Max size of image */
+  max-height: 300px; /* Max size of image */
+  border-radius: 50%; /* Makes the image round */
+  object-fit: cover; /* Ensures the image covers the circle without distorting */
+  filter: drop-shadow(1px 1px 20px rgb(235, 0, 215)); /* Drop shadow applied */
+  display: block; /* Ensures image is a block element to help with centering */
+  margin: 0 auto; /* Centers the image horizontally */
+  position: relative; /* Allow the image to stay inside the flex container */
+}
+
+/* For larger screens (you can adjust the screen size as per your needs) */
+@media (min-width: 768px) {
+  .hero-img {
+    width: 35vw; /* Increase width on larger screens */
+    height: 35vw; /* Keep height proportional */
+    max-width: 350px; /* Increase max width */
+    max-height: 400px; /* Increase max height */
+  }
+}
+
+/* Optional responsive tweaks for mobile */
+@media (max-width: 1024px) {
+  .hero-name {
+    font-size: 45px; /* Slightly smaller on tablet-sized screens */
+  }
+
+  .hero-im {
+    font-size: 45px;
+  }
+
+  .hero-job {
+    font-size: 28px;
+  }
+
+  /* Adjust margin-top for mobile */
+  .hero-container {
+    margin-top: 60px; /* Adjust this based on the navbar height */
+  }
+}
+
+@media (max-width: 768px) {
+  /* Stack the image and text vertically on smaller screens */
+  .hero-container {
+    flex-direction: column; /* Stack vertically */
+    text-align: center; /* Center the text */
+  }
+
+  /* Adjust image size */
+  .hero-img {
+    width: 250px; /* Smaller size on mobile */
+    height: 250px; /* Keep square aspect on mobile */
+    margin-top: 20px; /* Add some space between image and text */
+  }
+
+  .hero-text {
+    margin-top: 20px; /* Add space between image and text */
+  }
+
+  /* Smaller font size for mobile */
+  .hero-name {
+    font-size: 40px;
+  }
+
+  .hero-im {
+    font-size: 28px;
+  }
+
+  .hero-job {
+    font-size: 24px;
+    line-height: -1;
+  }
+}

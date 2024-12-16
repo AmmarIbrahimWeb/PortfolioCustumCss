@@ -1,0 +1,106 @@
+/* Container for the navbar */
+/* Fixed Navbar */
+.navbar-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* Ensure navbar stays on top */
+  background-color: #fff; /* Optional: make navbar background solid */
+  padding: 10px 20px;
+  display: flex; /* Use flexbox for layout */
+  justify-content: space-between; /* Space between the logo and links */
+  align-items: center; /* Vertically center items */
+}
+
+/* Brand Name (Portfolio) */
+.navbar-brand {
+  font-size: 24px;
+  color: rgb(235, 0, 215);
+  font-weight: bold;
+  margin-left: 0px;
+  /* Align the brand on the left side of the navbar */
+}
+
+/* Navbar Links */
+.navbar-links {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 20px;
+  align-items: center;
+}
+
+/* Navbar Link Styling */
+.navbar-link a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  font-size: 18px;
+  padding: 5px 0;
+}
+
+/* Mobile Menu Icon */
+.navbar-menu-icon {
+  display: none;
+  cursor: pointer;
+  color: rgb(235, 0, 215);
+  font-size: 30px;
+}
+
+/* Mobile Menu (Initially Hidden) */
+.mobile-menu {
+  position: absolute;
+  top: 0; /* Align to the top of the screen */
+  left: -250px; /* Start offscreen on the left */
+  width: 150px; /* Set a fixed width for the menu */
+  height: 35vh; /* Full viewport height */
+  background-color: rgb(235, 0, 215); /* Background color for the menu */
+  padding: 20px;
+  border-radius: 5px;
+  list-style-type: none;
+  display: flex; /* Vertical menu items */
+  flex-direction: column;
+  gap: 15px;
+  z-index: 10;
+  transition: left 0.3s ease; /* Smooth transition for sliding */
+}
+
+/* Menu Link Styling in Mobile Menu */
+.menuLink a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+}
+
+/* Remove list bullets from mobile menu */
+.mobile-menu li {
+  list-style-type: none;
+}
+
+/* Media Query for Mobile Screens */
+@media (max-width: 768px) {
+  /* Show the hamburger menu icon on mobile */
+  .navbar-menu-icon {
+    display: block;
+  }
+
+  /* Hide the regular navbar links on mobile */
+  .navbar-links {
+    display: none; 
+  }
+
+  /* When mobile menu is open, slide it in from the left */
+  .mobile-menu.open {
+    left: 0; /* Slide the mobile menu into view */
+  }
+
+  .mobile-menu li {
+    color: #030303;
+  }
+
+  /* Adjust the mobile menu appearance when it's toggled open */
+  .navbar-links.open + .mobile-menu {
+    display: flex;
+  }
+}
